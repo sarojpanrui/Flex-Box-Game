@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-box Game</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-image: url(background-image.jpg);
+        background-size: cover;
+    }
+    .container{
+        background-image: url(garden.jpg);
+        background-size: cover;
+        height: 500px;
+        width: 500px;
+        margin-top: 20vh;
+        margin-left: 35%;
+        position: relative;
+    }
+    /* Question: 1 */
+    .leaf{
+        background-image: url(leaf.png);
+        background-size: cover;
+        height: 150px;
+        width: 150px;
+        top: 20px;
+        left: 340px;
+        position: absolute;
+    }
+    /* Question: 2 */
+    .leaf{
+        background-image: url(leaf.png);
+        background-size: cover;
+        height: 150px;
+        width: 150px;
+        top: 20px;
+        left: 170px;
+        position: absolute;
+    }
+    /* Question: 3 */
+    /* .leaf{
+        background-image: url(leaf.png);
+        background-size: cover;
+        height: 150px;
+        width: 150px;
+        top: 170px;
+        left: 170px;
+        position: absolute;
+    } */
+    .grasshopper{
+        background-image: url(grasshopper.png);
+        background-size: cover;
+        position: absolute;
+        height: 180px;
+        width: 180px;
+    }
+    .garden{
+        border: 5px solid black;
+        height: 500px;
+        width: 500px;
+        display: flex;
+    }
+    #garden{
+        
+    }
+    h1{
+        color: rgb(0, 255, 17);
+        font-size: 5rem;
+        letter-spacing: 10px;
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
+        text-shadow: 0 0 10px black;
+    }
+    </style>
+</head>
+<body>
+    <h1>Place the grasshopper on the leaf</h1>
+    <div class="container">
+        <div class="leaf"></div>
+        <div class="garden" id="garden">
+            <div class="grasshopper"></div>
+        </div>
+    </div>
+    <div>
+        <label for="flexProperty">Enter Flex Property:</label>
+        <input type="text" id="flexProperty" name="flexProperty">
+        <button onclick="applyFlexProperty()">Apply</button>
+    </div>
+
+    <script>
+        function applyFlexProperty() {
+            const flexProperty = document.getElementById("flexProperty").value;
+            const garden = document.getElementById("garden");
+            garden.style.cssText = `display: flex; ${flexProperty}`;
+        }
+    </script>
+</body>
+</html>
